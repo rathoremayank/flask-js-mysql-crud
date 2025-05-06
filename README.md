@@ -3,7 +3,9 @@ Simple Application using Flask, JavaScript and MySQL
 
 # how to run this app 
 1. Run the SQL container
-``` docker run --name my-container-db -p 3306:3306 -e MYSQL_ROOT_PASSWORD=<your-password> -d mysql ````
+```
+docker run --name my-container-db -p 3306:3306 -e MYSQL_ROOT_PASSWORD=<your-password> -d mysql
+````
 3. Run Database and Table Creation Scripts
 ```
 CREATE DATABASE flask_crud;
