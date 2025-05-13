@@ -4,7 +4,7 @@ from flask_mysqldb import MySQL
 app = Flask(__name__)
 
 # MySQL Config
-app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_HOST'] = 'mysql.default.svc.cluster.local'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'Hesoyam@56'
 app.config['MYSQL_DB'] = 'flask_crud'
@@ -49,5 +49,8 @@ def delete_user(id):
     cur.close()
     return jsonify({"message": "User deleted"})
 
+# if __name__ == '__main__':
+#     app.run(debug=True)
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
